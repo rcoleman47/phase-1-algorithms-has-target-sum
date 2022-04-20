@@ -1,5 +1,16 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  // 1 step
+  const seenNumbers = {};
+  for (const number of array) {
+    // n steps
+    const complement = target - number;
+    // n steps
+    if (seenNumbers[complement]) return true;
+    // n steps
+    seenNumbers[number] = true;
+  }
+  // 1 step
+  return false;
 }
 
 /* 
@@ -7,7 +18,11 @@ function hasTargetSum(array, target) {
 */
 
 /* 
-  Add your pseudocode here
+  Write a function that takes in an array and a target number.
+  The function will search the array to determine if any two numbers add up
+  to the target number. 
+  if so, the function will return true
+  if not, the function will return false
 */
 
 /*
